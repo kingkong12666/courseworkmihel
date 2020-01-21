@@ -101,53 +101,53 @@ class ormLaboratoryRequirements(db.Model):
 
 db.create_all()
 
-session.query(ormStudent).delete()
-session.query(ormLaboratory).delete()
-session.query(ormRequirement).delete()
-session.query(ormStudentRequirementsDone).delete()
+# session.query(ormStudent).delete()
+# session.query(ormLaboratory).delete()
+# session.query(ormRequirement).delete()
+# session.query(ormStudentRequirementsDone).delete()
 
-Student1 = ormStudent(student_recordbook='km-6207',
-                      student_name='Michael',
-                      student_surname='Evlentiev',
-                      student_groupe='km-62',
-                      student_faculty='PMA',
-                      student_is_worker='true',
-                      student_time_work=1,
-                      requirement_name='use react')
-Student2 = ormStudent(student_recordbook='km-6211',
-                      student_name='Ivan',
-                      student_surname='Ivanov',
-                      student_groupe='km-62',
-                      student_faculty='PMA',
-                      student_is_worker='true',
-                      student_time_work=2,
-                      requirement_name='use css')
-Student3 = ormStudent(student_recordbook='km-6222',
-                      student_name='Petro',
-                      student_surname='Petrov',
-                      student_groupe='km-62',
-                      student_faculty='PMA',
-                      student_is_worker='false',
-                      student_time_work=2,
-                      requirement_name='use html5')
-Laboratory1 = ormLaboratory(laboratory_name='React-basic',
-                            laboratory_subject='web',
-                            laboratory_mark=5)
-Laboratory2 = ormLaboratory(laboratory_name='function in js',
-                            laboratory_subject='web',
-                            laboratory_mark=5)
-Laboratory3 = ormLaboratory(laboratory_name='closing',
-                            laboratory_subject='web',
-                            laboratory_mark=5)
-Requirement1 = ormRequirement(requirement_name='use react',
-                              requirement_point=1)
-Requirement2 = ormRequirement(requirement_name='use css',
-                              requirement_point=1)
-Requirement3 = ormRequirement(requirement_name='use html5',
-                              requirement_point=1)
-session.add_all([Student1, Student2, Student3])
-session.add_all([Laboratory1, Laboratory2, Laboratory3])
-session.add_all([Requirement1, Requirement2, Requirement3])
+# Student1 = ormStudent(student_recordbook='km-6207',
+#                       student_name='Michael',
+#                       student_surname='Evlentiev',
+#                       student_groupe='km-62',
+#                       student_faculty='PMA',
+#                       student_is_worker='true',
+#                       student_time_work=1,
+#                       requirement_name='use react')
+# Student2 = ormStudent(student_recordbook='km-6211',
+#                       student_name='Ivan',
+#                       student_surname='Ivanov',
+#                       student_groupe='km-62',
+#                       student_faculty='PMA',
+#                       student_is_worker='true',
+#                       student_time_work=2,
+#                       requirement_name='use css')
+# Student3 = ormStudent(student_recordbook='km-6222',
+#                       student_name='Petro',
+#                       student_surname='Petrov',
+#                       student_groupe='km-62',
+#                       student_faculty='PMA',
+#                       student_is_worker='false',
+#                       student_time_work=2,
+#                       requirement_name='use html5')
+# Laboratory1 = ormLaboratory(laboratory_name='React-basic',
+#                             laboratory_subject='web',
+#                             laboratory_mark=5)
+# Laboratory2 = ormLaboratory(laboratory_name='function in js',
+#                             laboratory_subject='web',
+#                             laboratory_mark=5)
+# Laboratory3 = ormLaboratory(laboratory_name='closing',
+#                             laboratory_subject='web',
+#                             laboratory_mark=5)
+# Requirement1 = ormRequirement(requirement_name='use react',
+#                               requirement_point=1)
+# Requirement2 = ormRequirement(requirement_name='use css',
+#                               requirement_point=1)
+# Requirement3 = ormRequirement(requirement_name='use html5',
+#                               requirement_point=1)
+# session.add_all([Student1, Student2, Student3])
+# session.add_all([Laboratory1, Laboratory2, Laboratory3])
+# session.add_all([Requirement1, Requirement2, Requirement3])
 session.commit()
 
 
