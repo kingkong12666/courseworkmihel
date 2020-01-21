@@ -148,7 +148,7 @@ db.create_all()
 # session.add_all([Student1, Student2, Student3])
 # session.add_all([Laboratory1, Laboratory2, Laboratory3])
 # session.add_all([Requirement1, Requirement2, Requirement3])
-session.commit()
+# session.commit()
 
 
 # main page
