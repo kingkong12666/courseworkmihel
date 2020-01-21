@@ -18,13 +18,13 @@ from dao.dto import StudentRequirementDTO, LaboratoryRequirementDTO
 
 app = Flask(__name__)
 app.secret_key = 'key'
-db_string = 'postgresql://postgres:changeme123@localhost/Course'
+db_string = 'postgresql://postgres:1@localhost/courseworkmihel'
 engine = create_engine(db_string)
 Session = sessionmaker(bind=engine)
 Base = declarative_base()
 metadata = Base.metadata
 session = Session()
-ENV = 'dev'
+ENV = 'prod'
 if ENV == 'dev':
     app.debug = True
     app.config['SQLALCHEMY_DATABASE_URI'] = db_string
@@ -99,13 +99,13 @@ class ormLaboratoryRequirements(db.Model):
         self.requirement_point = requirement_point
 
 
-db.create_all()
-
+# db.create_all()
+#
 # session.query(ormStudent).delete()
 # session.query(ormLaboratory).delete()
 # session.query(ormRequirement).delete()
 # session.query(ormStudentRequirementsDone).delete()
-
+#
 # Student1 = ormStudent(student_recordbook='km-6207',
 #                       student_name='Michael',
 #                       student_surname='Evlentiev',
@@ -662,7 +662,7 @@ def dashboard():
     return render_template('dashboard.html', val1=values1, lab1=labels1, val2=values2, lab2=labels2,lab3=lab3,val3=val3,corr_coef=corr_coef)
 
 
-app.run(debug=True)
+
 
 
 # AIfunc
@@ -703,3 +703,7 @@ def AIform_():
         return render_template('Oko.html', result=y_[0])
     elif request.method == 'GET':
         return render_template('AIfunc.html', form=form)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
